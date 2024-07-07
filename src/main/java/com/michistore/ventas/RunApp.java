@@ -1,7 +1,6 @@
 package com.michistore.ventas;
 
-import com.formdev.flatlaf.FlatLightLaf;
-import com.michistore.ventas.view.LoginView;
+import com.michistore.ventas.controller.AppController;
 
 /**
  *
@@ -11,9 +10,7 @@ import com.michistore.ventas.view.LoginView;
 public class RunApp {
 
     public static void main(String[] args) {
-        System.out.println("Iniciando...");
-        FlatLightLaf.setup();
-        LoginView loginView = new LoginView();
-        loginView.setVisible(true);
+        AppController controller = new AppController();
+        controller.initView();
     }
 }

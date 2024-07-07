@@ -1,12 +1,8 @@
 package com.michistore.ventas.view;
 
-/**
- *
- * @author jhon_
- */
-public class LoginView extends javax.swing.JFrame {
+public class LoginFrame extends javax.swing.JFrame {
 
-    public LoginView() {
+    public LoginFrame() {
         initComponents();
     }
 
@@ -33,11 +29,15 @@ public class LoginView extends javax.swing.JFrame {
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 20));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bundles/text"); // NOI18N
+        setTitle(bundle.getString("appname")); // NOI18N
         setMinimumSize(new java.awt.Dimension(300, 400));
         setPreferredSize(new java.awt.Dimension(300, 400));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        lblTitulo.setText("jLabel1");
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText(bundle.getString("appname")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -52,21 +52,22 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(filler1, gridBagConstraints);
 
-        btnEnter.setText("jButton1");
+        btnEnter.setText(bundle.getString("login.btn.enter")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(btnEnter, gridBagConstraints);
 
-        btnClose.setText("jButton2");
+        btnClose.setText(bundle.getString("login.btn.close")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(btnClose, gridBagConstraints);
 
-        lblEmail.setText("jLabel2");
+        lblEmail.setLabelFor(txtEmail);
+        lblEmail.setText(bundle.getString("login.lbl.email")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -81,7 +82,8 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(txtEmail, gridBagConstraints);
 
-        lblPass.setText("jLabel3");
+        lblPass.setLabelFor(txtPass);
+        lblPass.setText(bundle.getString("login.lbl.pass")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -116,8 +118,8 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClose;
-    private javax.swing.JButton btnEnter;
+    public javax.swing.JButton btnClose;
+    public javax.swing.JButton btnEnter;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
@@ -125,7 +127,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JPasswordField txtPass;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
 }
